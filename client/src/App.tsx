@@ -1,9 +1,15 @@
+import { Outlet } from "react-router";
+import TopBar from "./components/topbar/TopBar";
 import "./Reset.css";
 import "./App.css";
-import LandingPage from "./pages/LandingPage";
 
 function App() {
-  return <LandingPage />;
+  return (
+    <>
+      <TopBar />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
