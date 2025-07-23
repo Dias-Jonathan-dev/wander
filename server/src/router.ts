@@ -15,4 +15,16 @@ router.post("/api/items", itemActions.add);
 
 /* ************************************************************************* */
 
+// Declaration of a "Welcome" route
+
+import type { RequestHandler } from "express";
+
+const sayWelcome: RequestHandler = (req, res) => {
+  res.send("Welcome to Wild Series !");
+};
+
+router.get("/", sayWelcome);
+
+/* ************************************************************************* */
+
 export default router;
