@@ -1,4 +1,4 @@
-.landing-page-container {
+.selection-page-container {
   width: 100vw;
   height: 100vh;
   background-image: url(../assets/images/hot-balloon-background.jpg);
@@ -9,23 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  background-color: rgba(0, 12, 68, 0.7);
+  background-color: rgba(0, 12, 68, 0.8);
   background-blend-mode: multiply;
-}
-
-.landing-page-logo {
-  height: 30vh;
-}
-
-.landing-page-button-container {
-  display: flex;
-  gap: 2rem;
-}
-
-.landing-page-container h1 {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 500;
+  gap: 1rem;
 }
