@@ -1,0 +1,43 @@
+.options-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.7em 2em;
+  border: 2px solid var(--secondary-color);
+  border-radius: 999px;
+  background: transparent;
+  color: white; /* Texte blanc quand désélectionné */
+  font-size: 1rem;
+  transition: all 0.2s;
+  user-select: none;
+  margin: 0.5rem 0;
+}
+
+/* Cacher la checkbox native */
+.option-btn input[type="checkbox"] {
+  display: none;
+}
+
+/* Pour le texte dans le bouton */
+.option-btn span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+
+/* Bouton sélectionné */
+.option-btn.active {
+  background: var(--secondary-color);
+  color: var(--primary-color); /* Texte couleur primaire quand sélectionné */
+  border: none;
+}

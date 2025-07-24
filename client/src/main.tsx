@@ -10,6 +10,8 @@ import App from "./App";
 
 // Import additional components for new routes
 import LandingPage from "./pages/LandingPage";
+import ResultPage from "./pages/ResultPage";
+import SelectionPage from "./pages/SelectionPage";
 
 /* ************************************************************************* */
 
@@ -17,14 +19,33 @@ import LandingPage from "./pages/LandingPage";
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
+    path: "/",
     element: <App />,
     children: [
       {
         index: true,
-        element: <LandingPage />, // S'affiche dans l'Outlet
+        element: <LandingPage />,
       },
-      // Ajoute d'autres routes ici si besoin
+    ],
+  },
+  {
+    path: "/selection",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <SelectionPage />,
+      },
+    ],
+  },
+  {
+    path: "/result",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <ResultPage />,
+      },
     ],
   },
 ]);

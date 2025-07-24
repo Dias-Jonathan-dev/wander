@@ -1,0 +1,17 @@
+// models/Type.js
+import { DataTypes } from "sequelize";
+import sequelize from "../../config/database";
+
+const Type = sequelize.define("Type", {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  name: {
+    type: DataTypes.STRING(150),
+    allowNull: false,
+  },
+});
+
+export default Type;
