@@ -10,6 +10,7 @@ import App from "./App";
 
 // Import additional components for new routes
 import LandingPage from "./pages/LandingPage";
+import ResultPage from "./pages/ResultPage";
 import SelectionPage from "./pages/SelectionPage";
 
 /* ************************************************************************* */
@@ -34,6 +35,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <SelectionPage />,
+      },
+    ],
+  },
+  {
+    path: "/result",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <ResultPage />,
       },
     ],
   },
