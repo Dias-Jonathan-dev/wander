@@ -1,7 +1,7 @@
 import sequelize from "../../config/database";
 import Destination from "../models/Destination";
 
-const destinationData = [
+export const destinationData = [
   {
     name: "Studio Harry Potter",
     address: "Studio Tour Drive, Londres, UK",
@@ -32,6 +32,8 @@ Que vous soyez un(e) sorcier(e) chevronné(e) ou un simple Moldu passionné, cet
     family_access: true,
     PMR_access: true,
     budget_id: 3,
+    types: ["Lieu de film"],
+    atmospheres: ["Culturel", "Insolite"],
   },
   {
     name: "Mont Saint-Michel",
@@ -63,6 +65,8 @@ Un lieu magique, à visiter en toute saison, pour une expérience hors du temps.
     family_access: true,
     PMR_access: false,
     budget_id: 2,
+    types: ["Monument"],
+    atmospheres: ["Historique", "Culturel"],
   },
   {
     name: "Forêt de Brocéliande",
@@ -94,6 +98,8 @@ Un lieu enchanteur, idéal pour les amoureux de la nature et des histoires fanta
     family_access: true,
     PMR_access: false,
     budget_id: 1,
+    types: ["Forêt"],
+    atmospheres: ["Mystique", "Nature"],
   },
   {
     name: "Château de Chambord",
@@ -125,6 +131,8 @@ Un site incontournable pour les passionnés de patrimoine et de grands espaces.`
     family_access: true,
     PMR_access: true,
     budget_id: 2,
+    types: ["Monument"],
+    atmospheres: ["Historique", "Romantique"],
   },
   {
     name: "Gorges du Verdon",
@@ -156,6 +164,8 @@ Un site naturel grandiose, à découvrir en famille ou entre amis.`,
     family_access: true,
     PMR_access: false,
     budget_id: 2,
+    types: ["Montagne"],
+    atmospheres: ["Nature", "Insolite"],
   },
   {
     name: "Village de Rocamadour",
@@ -187,6 +197,8 @@ Un lieu chargé d’histoire et de spiritualité, à vivre intensément.`,
     family_access: false,
     PMR_access: false,
     budget_id: 1,
+    types: ["Village"],
+    atmospheres: ["Historique", "Romantique"],
   },
   {
     name: "Parc Astérix",
@@ -219,6 +231,8 @@ Un parc convivial et festif, idéal pour une journée en famille ou entre amis.`
     family_access: true,
     PMR_access: true,
     budget_id: 3,
+    types: ["Parc d'attraction"],
+    atmospheres: ["Culturel", "Branché"],
   },
   {
     name: "Plage de Palombaggia",
@@ -251,6 +265,8 @@ Un petit coin de paradis, à découvrir en solo, en couple ou en famille.`,
     family_access: true,
     PMR_access: true,
     budget_id: 3,
+    types: ["Plage"],
+    atmospheres: ["Nature", "Romantique"],
   },
   {
     name: "Musée du Louvre",
@@ -283,6 +299,8 @@ Un lieu fascinant pour les passionnés d’art, d’histoire et de culture.`,
     family_access: true,
     PMR_access: true,
     budget_id: 2,
+    types: ["Monument"],
+    atmospheres: ["Culturel", "Historique"],
   },
   {
     name: "Grand Canyon",
@@ -315,6 +333,8 @@ Un site naturel exceptionnel, à découvrir au moins une fois dans sa vie.`,
     family_access: true,
     PMR_access: false,
     budget_id: 4,
+    types: ["Montagne"],
+    atmospheres: ["Nature", "Insolite"],
   },
 ];
 
