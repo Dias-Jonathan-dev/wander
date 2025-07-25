@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 // Import the main app component
 import App from "./App";
 
+import DestinationDetails from "./pages/DestinationDetails";
 // Import additional components for new routes
 import LandingPage from "./pages/LandingPage";
 import ResultPage from "./pages/ResultPage";
@@ -45,6 +46,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <ResultPage />,
+      },
+    ],
+  },
+  {
+    path: "/destination/:id",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <DestinationDetails />,
       },
     ],
   },

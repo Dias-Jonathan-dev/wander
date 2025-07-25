@@ -11,9 +11,6 @@ function LandingPage() {
       <img src={logoIcon} alt="" className="landing-page-logo" />
       <h1>Partez à la recherche de lieux merveilleux à découvrir !</h1>
       <div className="landing-page-button-container">
-        <button type="button" className="button-blue">
-          Nous contacter
-        </button>
         <button
           type="button"
           className="button-pink"

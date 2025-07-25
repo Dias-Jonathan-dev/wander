@@ -18,6 +18,7 @@ router.get("/api/budget", budgetActions.browse);
 router.get("/api/enums/:field", enumActions.browse);
 
 router.post("/api/destinations/search", destinationActions.search);
+router.get("/api/destinations/:id", destinationActions.read);
 
 /* ************************************************************************* */
 
