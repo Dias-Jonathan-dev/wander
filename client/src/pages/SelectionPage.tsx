@@ -138,7 +138,7 @@ function SelectionPage() {
 
       const destinations = await response.json();
 
-      // Rediriger vers /result en passant les destinations via state
+      localStorage.setItem("destinations", JSON.stringify(destinations));
       navigate("/result", { state: { destinations } });
     } catch (error) {
       console.error(error);

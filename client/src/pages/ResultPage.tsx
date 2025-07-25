@@ -5,7 +5,9 @@ import type { Destination } from "../types/Destination";
 function ResultPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const destinations: Destination[] = location.state?.destinations || [];
+  const destinations: Destination[] =
+    location.state?.destinations ||
+    JSON.parse(localStorage.getItem("destinations") || "[]");
 
   return (
     <div className="result-page-container">
