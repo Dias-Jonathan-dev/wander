@@ -11,6 +11,7 @@ import App from "./App";
 import DestinationDetails from "./pages/DestinationDetails";
 // Import additional components for new routes
 import LandingPage from "./pages/LandingPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import ResultPage from "./pages/ResultPage";
 import SelectionPage from "./pages/SelectionPage";
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         element: <DestinationDetails />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 
