@@ -60,6 +60,7 @@ body {
 :root {
   --primary-color: #1d349a;
   --secondary-color: #c00069;
+  --primary-color-rgb: 12, 28, 68;
 }
 
 button {
@@ -71,7 +72,7 @@ button {
   border: none;
   color: white;
   font-family: "Kodchasan", sans-serif;
-  padding: 15px;
+  padding: 10px;
   border-radius: 999px;
 }
 
@@ -80,7 +81,7 @@ button {
   border: none;
   color: white;
   font-family: "Kodchasan", sans-serif;
-  padding: 15px;
+  padding: 10px;
   border-radius: 999px;
 }
 

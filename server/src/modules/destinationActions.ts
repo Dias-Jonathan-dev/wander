@@ -14,7 +14,6 @@ const search = async (req: Request, res: Response) => {
       accessibilite,
     } = req.body;
 
-    // Build the where clause dynamically
     const where: Record<string, unknown> = {};
 
     if (season?.length) where.season = { [Op.in]: season };
@@ -22,13 +21,11 @@ const search = async (req: Request, res: Response) => {
     if (location?.length) where.location = { [Op.in]: location };
     if (budget?.length) where.budget_id = { [Op.in]: budget };
 
-    // Accessibilité (family_access, PMR_access)
     if (accessibilite) {
       if (accessibilite.enfant) where.family_access = true;
       if (accessibilite.pmr) where.PMR_access = true;
     }
 
-    // Find destinations with associations
     const destinations = await Destination.findAll({
       where,
       include: [
@@ -63,4 +60,31 @@ const search = async (req: Request, res: Response) => {
   }
 };
 
-export default { search };
+const read = async (req: Request, res: Response) => {
+  try {
+    const destinationId = Number.parseInt(req.params.id, 10);
+
+    const destination = await Destination.findByPk(destinationId, {
+      include: [
+        { model: Type, as: "Types", through: { attributes: [] } },
+        { model: Atmosphere, as: "Atmospheres", through: { attributes: [] } },
+        { model: Budget, as: "budget" },
+      ],
+    });
+
+    if (!destination) {
+      res.status(404).json({ error: "Destination non trouvée" });
+      return;
+    }
+
+    res.json(destination);
+  } catch (error) {
+    console.error("Erreur lors de la récupération de la destination :", error);
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+};
+
+export default {
+  search,
+  read,
+};
