@@ -31,7 +31,9 @@ function DestinationDetails() {
     <div
       className="destination-details-bg"
       style={{
-        backgroundImage: `linear-gradient(rgba(var(--primary-color-rgb),0.8),rgba(var(--primary-color-rgb),0.8)), url(${destination.background_image})`,
+        backgroundImage: `url(${destination.background_image})`,
+        backgroundColor: "rgba(var(--primary-color-rgb), 0.9)",
+        backgroundBlendMode: "multiply",
       }}
     >
       <div className="destination-details-content">
