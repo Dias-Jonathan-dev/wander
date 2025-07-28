@@ -3,12 +3,17 @@ import { Sequelize } from "sequelize";
 
 dotenv.config();
 
+const dbName = process.env.DB_NAME || process.env.MYSQLDATABASE;
+const dbUser = process.env.DB_USER || process.env.MYSQLUSER;
+const dbPassword = process.env.DB_PASSWORD || process.env.MYSQLPASSWORD;
+const dbHost = process.env.DB_HOST || process.env.MYSQLHOST;
+
 const sequelize = new Sequelize(
-  process.env.DB_NAME as string,
-  process.env.DB_USER as string,
-  process.env.DB_PASSWORD as string,
+  dbName as string,
+  dbUser as string,
+  dbPassword as string,
   {
-    host: process.env.DB_HOST,
+    host: dbHost,
     dialect: "mysql",
     logging: false,
     define: {
