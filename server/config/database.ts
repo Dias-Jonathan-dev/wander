@@ -3,26 +3,43 @@ import { Sequelize } from "sequelize";
 
 dotenv.config();
 
-const dbName = process.env.DB_NAME || process.env.MYSQLDATABASE;
-const dbUser = process.env.DB_USER || process.env.MYSQLUSER;
-const dbPassword = process.env.DB_PASSWORD || process.env.MYSQLPASSWORD;
-const dbHost = process.env.DB_HOST || process.env.MYSQLHOST;
-const dbPort = Number(process.env.DB_PORT || process.env.MYSQLPORT || 3306);
+const dbUrl = process.env.MYSQL_URL || process.env.DATABASE_URL;
 
-const sequelize = new Sequelize(
-  dbName as string,
-  dbUser as string,
-  dbPassword as string,
-  {
-    host: dbHost,
-    port: dbPort,
+let sequelize: Sequelize;
+
+if (dbUrl) {
+  // En production Railway, utilise l'URL complète
+  sequelize = new Sequelize(dbUrl, {
     dialect: "mysql",
     logging: false,
     define: {
       freezeTableName: true,
       timestamps: false,
     },
-  },
-);
+  });
+} else {
+  // En local, utilise les variables séparées
+  const dbName = process.env.DB_NAME;
+  const dbUser = process.env.DB_USER;
+  const dbPassword = process.env.DB_PASSWORD;
+  const dbHost = process.env.DB_HOST;
+  const dbPort = Number(process.env.DB_PORT || 3306);
+
+  sequelize = new Sequelize(
+    dbName as string,
+    dbUser as string,
+    dbPassword as string,
+    {
+      host: dbHost,
+      port: dbPort,
+      dialect: "mysql",
+      logging: false,
+      define: {
+        freezeTableName: true,
+        timestamps: false,
+      },
+    },
+  );
+}
 
 export default sequelize;
