@@ -7,6 +7,13 @@ const dbUrl = process.env.MYSQL_URL || process.env.DATABASE_URL;
 
 let sequelize: Sequelize;
 
+console.log("DB connection info:", {
+  url: dbUrl,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+});
+
 if (dbUrl) {
   // En production Railway, utilise l'URL complète
   sequelize = new Sequelize(dbUrl, {
