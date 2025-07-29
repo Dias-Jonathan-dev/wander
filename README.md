@@ -49,11 +49,10 @@ Il contient :
 ### 💻 Frontend
 
 - **React**
+- **CSS**
 - **TypeScript**
 - **Vite**
 - **React Router DOM**
-- **Classnames**
-- **ESLint / Prettier** pour la qualité de code
 
 ---
 
