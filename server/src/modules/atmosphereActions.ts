@@ -6,7 +6,10 @@ const browse = async (req: Request, res: Response) => {
     const types = await Atmosphere.findAll();
     res.json(types);
   } catch (error) {
-    res.status(500).json({ error: "Erreur lors de la récupération des types" });
+    console.error("Erreur dans /api/atmosphere:", error);
+    res
+      .status(500)
+      .json({ error: "Erreur lors de la récupération des atmospheres" });
   }
 };
 
