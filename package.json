@@ -22,7 +22,8 @@
     "dev:server": "npm run dev --workspace=server",
     "prepare": "git config core.hooksPath .git-hooks || true",
     "start": "npm run start --workspace=server",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm run test --workspaces --if-present",
+    "build": "echo 'No build step required'"
   },
   "keywords": [],
   "author": "  (hit Enter to use an empty string)",
