@@ -73,7 +73,7 @@ cd ../client && npm install
 
     Lancer l’application :
 
-✅ Option 1 – Dans deux terminaux séparés
+✅ Option 1 – Dans un seul terminal
 
  npm run dev
 
