@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../config/database";
 
-const Atmosphere = sequelize.define("Atmosphere", {
+const Atmosphere = sequelize.define("atmosphere", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
