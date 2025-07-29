@@ -5,7 +5,7 @@
     "dev": "tsx watch --clear-screen=false ./src/main",
     "db:migrate": "tsx ./bin/migrate",
     "db:seed": "tsx ./bin/seed",
-    "build": "tsx ./bin/migrate",
+    "build": "echo 'No build step required'",
     "start": "tsx ./src/main",
     "test": "jest --verbose"
   },
