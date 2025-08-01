@@ -4,6 +4,7 @@ import "./Reset.css";
 import "./App.css";
 
 function App() {
+  console.log("API URL utilisée:", import.meta.env.VITE_API_URL);
   return (
     <>
       <TopBar />
