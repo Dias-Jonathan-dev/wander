@@ -4,6 +4,8 @@ import { Atmosphere, Budget, Destination, Type } from "../models";
 
 const search = async (req: Request, res: Response) => {
   try {
+    console.log("Body reçu dans search:", JSON.stringify(req.body, null, 2));
+
     const {
       budget,
       type,
@@ -25,6 +27,11 @@ const search = async (req: Request, res: Response) => {
       if (accessibilite.enfant) where.family_access = true;
       if (accessibilite.pmr) where.PMR_access = true;
     }
+
+    console.log(
+      "Objet 'where' utilisé pour la requête Sequelize:",
+      JSON.stringify(where, null, 2),
+    );
 
     const destinations = await Destination.findAll({
       where,
@@ -52,6 +59,8 @@ const search = async (req: Request, res: Response) => {
         { model: Budget, as: "budget" },
       ],
     });
+
+    console.log(`Nombre de destinations trouvées: ${destinations.length}`);
 
     res.json(destinations);
   } catch (error) {
