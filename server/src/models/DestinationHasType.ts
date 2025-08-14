@@ -17,7 +17,7 @@ const DestinationHasType = sequelize.define(
   },
   {
     timestamps: false,
-    tableName: "destination_has_Type",
+    tableName: "destination_has_type",
   },
 );
 
