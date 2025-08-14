@@ -20,7 +20,12 @@ const app = express();
 
 import cors from "cors";
 
-app.use(cors());
+const allowedOrigins = process.env.CLIENT_URL?.split(",") || [];
+app.use(
+  cors({
+    origin: allowedOrigins,
+  }),
+);
 
 // If you need to allow extra origins, you can add something like this:
 
