@@ -24,13 +24,13 @@ Destination.belongsToMany(User, {
 
 // Relations N-N entre Destination et Type
 Destination.belongsToMany(Type, {
-  through: "Destination_has_Type",
+  through: "destination_has_type",
   foreignKey: "destination_id",
   otherKey: "type_id",
   as: "Types",
 });
 Type.belongsToMany(Destination, {
-  through: "Destination_has_Type",
+  through: "destination_has_type",
   foreignKey: "type_id",
   otherKey: "destination_id",
   as: "Destinations",
@@ -38,13 +38,13 @@ Type.belongsToMany(Destination, {
 
 // Relations N-N entre Destination et Atmosphere
 Destination.belongsToMany(Atmosphere, {
-  through: "Destination_has_Atmosphere",
+  through: "destination_has_atmosphere",
   foreignKey: "destination_id",
   otherKey: "atmosphere_id",
   as: "Atmospheres",
 });
 Atmosphere.belongsToMany(Destination, {
-  through: "Destination_has_Atmosphere",
+  through: "destination_has_atmosphere",
   foreignKey: "atmosphere_id",
   otherKey: "destination_id",
   as: "Destinations",
