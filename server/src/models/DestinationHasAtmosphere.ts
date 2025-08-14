@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import sequelize from "../../config/database";
 
 const DestinationHasAtmosphere = sequelize.define(
-  "Destination_has_Atmosphere",
+  "DestinationHasAtmosphere",
   {
     destination_id: {
       type: DataTypes.INTEGER,
@@ -17,7 +17,7 @@ const DestinationHasAtmosphere = sequelize.define(
   },
   {
     timestamps: false,
-    tableName: "Destination_has_Atmosphere",
+    tableName: "destination_has_atmosphere",
   },
 );
 
