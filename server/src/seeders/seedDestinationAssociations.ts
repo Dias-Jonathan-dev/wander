@@ -1,9 +1,16 @@
+import fs from "node:fs";
+import path from "node:path";
 import Atmosphere from "../models/Atmosphere";
 import Destination from "../models/Destination";
 import DestinationHasAtmosphere from "../models/DestinationHasAtmosphere";
 import DestinationHasType from "../models/DestinationHasType";
 import Type from "../models/Type";
-import { destinationData } from "./seedDestination";
+
+const filePath = path.join(
+  __dirname,
+  "../../database/fixtures/destinations.json",
+);
+const destinationData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
 const seedAssociations = async () => {
   for (const entry of destinationData) {
