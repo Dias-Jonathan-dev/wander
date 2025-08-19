@@ -60,7 +60,9 @@ function DestinationDetails() {
         </div>
         <div className="destination-description">
           <h1>{destination.name}</h1>
-          <p>{destination.long_description}</p>
+          {destination.long_description?.split("\n\n").map((para) => (
+            <p key={para}>{para}</p>
+          ))}
         </div>
       </div>
     </div>

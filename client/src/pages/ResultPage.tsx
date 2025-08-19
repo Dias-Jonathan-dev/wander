@@ -30,7 +30,9 @@ function ResultPage() {
             <div className="card-content">
               <h3>{dest.name}</h3>
               <h4>{dest.Types?.[0]?.name || "Type inconnu"}</h4>
-              <p>{dest.short_description}</p>
+              {dest.short_description?.split("\n\n").map((para) => (
+                <p key={`${para}-${para}`}>{para}</p>
+              ))}
               <button
                 type="button"
                 className="button-pink"
