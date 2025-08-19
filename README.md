@@ -50,7 +50,6 @@ Il contient :
 
 - **React**
 - **CSS**
-- **TypeScript**
 - **Vite**
 - **React Router DOM**
 
